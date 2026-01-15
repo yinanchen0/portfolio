@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { FileText, X, ExternalLink, Download } from "lucide-react";
+import { FileText, ExternalLink, Download } from "lucide-react";
 
 interface ThesisItem {
   title: string;
@@ -30,7 +29,6 @@ const thesisItems: ThesisItem[] = [
 ];
 
 const Thesis = () => {
-  const [activeThesis, setActiveThesis] = useState<ThesisItem | null>(null);
 
   return (
     <section id="thesis" className="py-32 px-6">
@@ -71,13 +69,15 @@ const Thesis = () => {
                   
                   {/* Buttons */}
                   <div className="flex flex-wrap gap-3 mb-6">
-                    <button
-                      onClick={() => setActiveThesis(thesis)}
+                    <a
+                      href={thesis.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-md font-medium text-sm hover:opacity-90 transition-opacity"
                     >
                       <ExternalLink size={16} />
-                      View Full Thesis
-                    </button>
+                      View Full Report
+                    </a>
                     <a
                       href={thesis.pdfUrl}
                       download
@@ -109,32 +109,6 @@ const Thesis = () => {
         </div>
       </div>
       
-      {/* PDF Viewer Modal */}
-      {activeThesis && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/95 backdrop-blur-sm">
-          <div className="w-full max-w-5xl h-[85vh] bg-card rounded-lg border border-border overflow-hidden flex flex-col">
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <div>
-                <h3 className="font-display text-lg font-medium">{activeThesis.title}</h3>
-                <p className="text-sm text-muted-foreground">{activeThesis.degree} • {activeThesis.year}</p>
-              </div>
-              <button
-                onClick={() => setActiveThesis(null)}
-                className="p-2 hover:bg-secondary rounded-md transition-colors"
-              >
-                <X size={24} />
-              </button>
-            </div>
-            <div className="flex-1 bg-muted">
-              <iframe
-                src={activeThesis.pdfUrl}
-                className="w-full h-full"
-                title={activeThesis.title}
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
