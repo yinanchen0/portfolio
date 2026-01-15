@@ -45,6 +45,7 @@ const About = () => {
             <p className="text-muted-foreground text-sm mt-2">Curiosity</p>
           </div>
         </div>
+        </div>
       </div>
     </section>
   );
