@@ -32,31 +32,20 @@ const About = () => {
         <div className="mt-24 pt-16 border-t border-border">
           <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-8">Skills & Technologies</p>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Embedded & Electronics */}
-            <div>
-              <h3 className="text-foreground font-semibold text-lg mb-4">Embedded & Electronics</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Embedded C/C++, Python, MATLAB</li>
-                <li>• ARM Cortex-M microcontrollers (MSP432), ESP32, Arduino</li>
-                <li>• Low-level peripheral interfacing (GPIO, ADC, DAC, timers, interrupts)</li>
-                <li>• Analogue signal conditioning (biasing, filtering, amplification)</li>
-                <li>• Schematic capture & PCB layout (KiCad, DipTrace)</li>
-                <li>• Hardware bring-up & debugging (oscilloscope, logic analyser)</li>
-              </ul>
-            </div>
-
-            {/* Software & Analysis */}
-            <div>
-              <h3 className="text-foreground font-semibold text-lg mb-4">Software & Analysis</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Python for data analysis and signal validation</li>
-                <li>• MATLAB for signal processing and frequency-domain analysis</li>
-                <li>• Mechanical design for electronics (Fusion 360, SolidWorks)</li>
-                <li>• Multisim/RoboDK</li>
-                <li>• Python, C, C++, C#, SystemVerilog, HTML/CSS, JavaScript, SQL</li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              "Python", "C/C++", "MATLAB", "JavaScript",
+              "Arduino", "Raspberry Pi", "ESP32", "PCB Design",
+              "KiCAD", "Altium", "SolidWorks", "AutoCAD",
+              "Machine Learning", "Signal Processing", "Embedded Systems", "IoT"
+            ].map((skill) => (
+              <div 
+                key={skill}
+                className="px-4 py-3 bg-secondary/50 rounded-lg text-center text-foreground text-sm font-medium hover:bg-secondary transition-colors"
+              >
+                {skill}
+              </div>
+            ))}
           </div>
         </div>
       </div>
