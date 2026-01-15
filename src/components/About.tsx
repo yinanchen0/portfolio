@@ -1,3 +1,5 @@
+import profileImage from "@/assets/profile.jpg";
+
 const About = () => {
   return (
     <section id="about" className="py-32 px-6">
@@ -15,9 +17,11 @@ const About = () => {
 
           {/* Photo */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-80 h-96 bg-card rounded-lg border border-border flex items-center justify-center">
-              <span className="text-muted-foreground">Your Photo</span>
-            </div>
+            <img 
+              src={profileImage} 
+              alt="Profile photo" 
+              className="w-80 h-96 object-cover rounded-lg border border-border"
+            />
           </div>
         </div>
 
