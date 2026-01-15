@@ -20,10 +20,10 @@ const About = () => {
             <img 
               src={profileImage} 
               alt="Profile photo" 
-              className="w-80 h-96 object-cover rounded-lg border border-border"
+              className="w-80 h-96 object-cover rounded-lg border border-border lg:mr-10"
             />
           </div>
-        </div>
+
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-border">
