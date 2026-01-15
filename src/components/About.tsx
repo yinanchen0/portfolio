@@ -6,7 +6,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
-          <div className="lg:pl-12">
+          <div className="lg:pl-24">
             <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-6">About Me</p>
             <p className="text-muted-foreground text-lg leading-relaxed">
               As a recent graduate in Electrical and Electronic Engineering, I initially pursued the degree simply
