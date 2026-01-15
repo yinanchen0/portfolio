@@ -34,7 +34,7 @@ const About = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              "Python", "C/C++", "MATLAB", "JavaScript",
+              "Python", "C/C++/C#", "MATLAB", "JavaScript",
               "Arduino", "Raspberry Pi", "ESP32", "PCB Design",
               "KiCAD", "Altium", "SolidWorks", "AutoCAD",
               "Machine Learning", "Signal Processing", "Embedded Systems", "IoT"
