@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "#projects" },
   { label: "Thesis", href: "#thesis" },
   { label: "Contact", href: "#contact" },
 ];
@@ -26,30 +26,22 @@ const Navigation = () => {
         isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-xl font-semibold">
-          YN<span className="text-primary">.</span>
+      <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="#" className="font-display text-xl font-normal text-foreground">
+          Portfolio
         </a>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm tracking-wide"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2 border border-primary text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            Resume
-          </a>
         </div>
         
         {/* Mobile Menu Button */}
@@ -71,19 +63,11 @@ const Navigation = () => {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                className="text-muted-foreground hover:text-foreground transition-colors py-2"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-3 border border-primary text-primary rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors text-center"
-            >
-              Resume
-            </a>
           </div>
         </div>
       )}

@@ -6,7 +6,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Your Name. All rights reserved.
         </p>
         <p className="text-muted-foreground text-sm">
-          Built with passion and dedication
+          Designed & built with care
         </p>
       </div>
     </footer>
