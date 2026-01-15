@@ -12,12 +12,12 @@ interface ThesisItem {
 
 const thesisItems: ThesisItem[] = [
   {
-    title: "Your Thesis Title Goes Here",
-    degree: "Your Degree",
-    year: "Year",
-    abstract: "This thesis explores [brief description of your thesis topic]. Through extensive research and analysis, it investigates [main research question or objective]. The findings contribute to [field/area] by providing insights into [key contributions or discoveries].",
-    keywords: ["Research", "Analysis", "Innovation", "Technology", "Design"],
-    pdfUrl: "/thesis-1.pdf",
+    title: "Investigate the Feasibility of Capturing Micromovements on Fingers for Sensor Fusion in Virtual Keyboard",
+    degree: "BEng Electronic & Electrical Engineering, UCL",
+    year: "2024",
+    abstract: "This study explores the potential of optical sensors in capturing finger micro movements for virtual keyboard applications. Two wearable devices equipped with infrared reflection sensors were developed and tested. The keyboard design achieved 80% accuracy with the ring device and 92% accuracy with the palm-worn device. Results revealed the device's ability to recognize high-frequency trembling up to 25Hz.",
+    keywords: ["Optical Sensors", "Virtual Keyboard", "Machine Learning", "Sensor Fusion", "Wearable Devices"],
+    pdfUrl: "/final-report.pdf",
   },
   {
     title: "Your Second Thesis Title",
