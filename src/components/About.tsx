@@ -48,7 +48,7 @@ const About = () => {
               "Machine Learning",
               "Hardware debugging",
               "Embedded Systems",
-              "soldering",
+              "Soldering",
             ].map((skill) => (
               <div
                 key={skill}
