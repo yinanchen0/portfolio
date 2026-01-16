@@ -1,3 +1,5 @@
+import dpsPcbImage from "@/assets/projects/dps-pcb.jpg";
+
 interface Project {
   category: string;
   title: string;
@@ -12,9 +14,10 @@ const projects: Project[] = [
     description: "A full-stack online shopping experience with modern UI and seamless checkout flow.",
   },
   {
-    category: "Design",
-    title: "Brand Identity Design",
-    description: "Complete visual identity system for a sustainable fashion startup.",
+    category: "Electronics",
+    title: "12V & 5V Digital Power Supply",
+    description: "A dual-output power supply PCB delivering stable 12.15V (±0.4%) and 5.1V (±2%) with short-circuit protection. Features 77.4% efficiency at 12V output and operates from 0°C to 70°C.",
+    image: dpsPcbImage,
   },
   {
     category: "Data Science",
@@ -60,9 +63,13 @@ const Projects = () => {
               key={index}
               className="group cursor-pointer"
             >
-              {/* Image Placeholder */}
+              {/* Image */}
               <div className="aspect-[4/3] bg-card rounded-lg border border-border mb-4 flex items-center justify-center overflow-hidden group-hover:border-primary/30 transition-colors">
-                <span className="text-muted-foreground text-sm">Preview</span>
+                {project.image ? (
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-muted-foreground text-sm">Preview</span>
+                )}
               </div>
               
               {/* Content */}
