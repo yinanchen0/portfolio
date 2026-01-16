@@ -45,10 +45,10 @@ const ProjectAllscoo = () => {
         </div>
       </section>
 
-      {/* Design Philosophy */}
+      {/* Design */}
       <section className="px-6 py-16 bg-card/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-3xl font-normal text-foreground mb-8">Design Philosophy</h2>
+          <h2 className="font-display text-3xl font-normal text-foreground mb-8">Design</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -61,42 +61,24 @@ const ProjectAllscoo = () => {
                 enhanced friction for safety, and a foldable compact design for easy transport.
               </p>
             </div>
-            <img 
-              src="/images/allscoo-design-map.jpg" 
-              alt="Design Mapping Process" 
-              className="rounded-lg shadow-md"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 3D Renders */}
-      <section className="px-6 py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-3xl font-normal text-foreground mb-8">3D Modeling & Renders</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <img 
-                src="/images/allscoo-renders.jpg" 
-                alt="Multiple Angle Renders" 
-                className="rounded-lg shadow-md mb-4"
-              />
-              <p className="text-sm text-muted-foreground">Multiple angle views showcasing the complete design</p>
-            </div>
-            <div>
+            <div className="grid grid-cols-2 gap-4">
               <img 
                 src="/images/allscoo-dimensions.jpg" 
                 alt="Technical Dimensions" 
-                className="rounded-lg shadow-md mb-4"
+                className="rounded-lg shadow-md rotate-[-90deg]"
               />
-              <p className="text-sm text-muted-foreground">Technical drawings with precise dimensions</p>
+              <img 
+                src="/images/allscoo-renders.jpg" 
+                alt="Multiple Angle Renders" 
+                className="rounded-lg shadow-md rotate-90"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Key Features */}
-      <section className="px-6 py-16 bg-card/50">
+      <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-normal text-foreground mb-8">Key Features</h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -138,7 +120,7 @@ const ProjectAllscoo = () => {
       </section>
 
       {/* User-Centered Design */}
-      <section className="px-6 py-16">
+      <section className="px-6 py-16 bg-card/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-normal text-foreground mb-8">User-Centered Design</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -170,17 +152,6 @@ const ProjectAllscoo = () => {
               <p className="text-muted-foreground mt-4 text-sm">— ALLSCOO Design Philosophy</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Final Render */}
-      <section className="px-6 py-16">
-        <div className="max-w-6xl mx-auto">
-          <img 
-            src="/images/allscoo-final.jpg" 
-            alt="ALLSCOO Final Render" 
-            className="w-full rounded-xl shadow-xl"
-          />
         </div>
       </section>
 
