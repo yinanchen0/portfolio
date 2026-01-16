@@ -3,6 +3,7 @@ import dpsPcbImage from "@/assets/projects/dps-pcb.jpg";
 import roboticsArmImage from "@/assets/projects/robotics-arm.jpg";
 import virtualKeyboardImage from "@/assets/projects/virtual-keyboard-device.jpg";
 import emgCircuitImage from "@/assets/projects/emg-circuit.jpg";
+import allscooImage from "@/assets/projects/allscoo-hero.jpg";
 
 interface Project {
   category: string;
@@ -42,14 +43,11 @@ const projects: Project[] = [
     link: "/projects/emg",
   },
   {
-    category: "Web Development",
-    title: "Portfolio Website",
-    description: "Custom portfolio site for a photographer showcasing their work.",
-  },
-  {
-    category: "Research",
-    title: "Research Publication",
-    description: "Academic paper on emerging technologies in the field.",
+    category: "3D Modeling & Product Design",
+    title: "ALLSCOO - Mobility Scooter",
+    description: "User-centered accessible mobility scooter designed through research and 3D CAD modeling. Features foldable design, adjustable components, and terrain adaptability.",
+    image: allscooImage,
+    link: "/projects/allscoo",
   },
 ];
 
