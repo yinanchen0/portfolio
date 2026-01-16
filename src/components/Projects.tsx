@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import dpsPcbImage from "@/assets/projects/dps-pcb.jpg";
 
 interface Project {
@@ -5,6 +6,7 @@ interface Project {
   title: string;
   description: string;
   image?: string;
+  link?: string;
 }
 
 const projects: Project[] = [
@@ -18,6 +20,7 @@ const projects: Project[] = [
     title: "12V & 5V Digital Power Supply",
     description: "A dual-output power supply PCB delivering stable 12.15V (±0.4%) and 5.1V (±2%) with short-circuit protection. Features 77.4% efficiency at 12V output and operates from 0°C to 70°C.",
     image: dpsPcbImage,
+    link: "/projects/dps",
   },
   {
     category: "Data Science",
@@ -58,32 +61,48 @@ const Projects = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group cursor-pointer"
-            >
-              {/* Image */}
-              <div className="aspect-[4/3] bg-card rounded-lg border border-border mb-4 flex items-center justify-center overflow-hidden group-hover:border-primary/30 transition-colors">
-                {project.image ? (
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                ) : (
-                  <span className="text-muted-foreground text-sm">Preview</span>
-                )}
+          {projects.map((project, index) => {
+            const CardContent = (
+              <>
+                {/* Image */}
+                <div className="aspect-[4/3] bg-card rounded-lg border border-border mb-4 flex items-center justify-center overflow-hidden group-hover:border-primary/30 transition-colors">
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-muted-foreground text-sm">Preview</span>
+                  )}
+                </div>
+                
+                {/* Content */}
+                <p className="text-primary font-medium tracking-[0.15em] uppercase text-xs mb-2">
+                  {project.category}
+                </p>
+                <h3 className="font-display text-xl font-normal text-foreground mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </>
+            );
+
+            return project.link ? (
+              <Link
+                key={index}
+                to={project.link}
+                className="group cursor-pointer block"
+              >
+                {CardContent}
+              </Link>
+            ) : (
+              <div
+                key={index}
+                className="group"
+              >
+                {CardContent}
               </div>
-              
-              {/* Content */}
-              <p className="text-primary font-medium tracking-[0.15em] uppercase text-xs mb-2">
-                {project.category}
-              </p>
-              <h3 className="font-display text-xl font-normal text-foreground mb-2 group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
