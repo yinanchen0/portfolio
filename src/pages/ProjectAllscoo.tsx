@@ -49,31 +49,11 @@ const ProjectAllscoo = () => {
       <section className="px-6 py-16 bg-card/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-normal text-foreground mb-8">Design</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                The design was structured around four main aspects after conducting user interviews with mobility scooter 
-                and wheelchair users: <strong className="text-foreground">User Needs</strong>, <strong className="text-foreground">Design Inspiration</strong>, 
-                <strong className="text-foreground"> Sustainability</strong>, and <strong className="text-foreground">Terrain Adaptability</strong>.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Key features successfully incorporated include adjustable height mechanisms, back mirrors, 
-                enhanced friction for safety, and a foldable compact design for easy transport.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <img 
-                src="/images/allscoo-dimensions.jpg" 
-                alt="Technical Dimensions" 
-                className="rounded-lg shadow-md rotate-[-90deg]"
-              />
-              <img 
-                src="/images/allscoo-renders.jpg" 
-                alt="Multiple Angle Renders" 
-                className="rounded-lg shadow-md rotate-90"
-              />
-            </div>
-          </div>
+          <img 
+            src="/images/allscoo-renders.jpg" 
+            alt="ALLSCOO Design Renders" 
+            className="w-full rounded-lg shadow-md"
+          />
         </div>
       </section>
 
