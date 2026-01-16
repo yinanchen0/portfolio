@@ -15,13 +15,13 @@ const Contact = () => {
         <a href="mailto:your.email@example.com" className="font-display text-2xl md:text-3xl text-foreground hover:text-primary transition-colors">yinchen2063@gmail.com</a>
         
         <div className="flex justify-center gap-6 mt-12">
-          <a href="mailto:your.email@example.com" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+          <a href="mailto:yinchen2063@gmail.com" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
             <Mail size={22} strokeWidth={1.5} />
           </a>
-          <a href="#" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/yinan-chen-924781264" target="_blank" rel="noopener noreferrer" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
             <Linkedin size={22} strokeWidth={1.5} />
           </a>
-          <a href="#" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+          <a href="https://github.com/yinanchen0" target="_blank" rel="noopener noreferrer" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
             <Github size={22} strokeWidth={1.5} />
           </a>
           
