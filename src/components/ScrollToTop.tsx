@@ -5,7 +5,10 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Only scroll to top when entering project pages, not when returning home
+    if (pathname.startsWith("/projects/")) {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return null;
