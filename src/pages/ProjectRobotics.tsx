@@ -47,21 +47,27 @@ const ProjectRobotics = () => {
         </div>
       </section>
 
-      {/* Demo Video */}
+      {/* Demo GIFs */}
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-2xl font-normal text-foreground mb-8">
             Pick and Place Demo
           </h2>
-          <div className="bg-card rounded-lg border border-border overflow-hidden">
-            <video
-              src="/videos/robotics-demo.mp4"
-              controls
-              className="w-full h-auto"
-              poster={roboticsArmImage}
-            >
-              Your browser does not support the video tag.
-            </video>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-card rounded-lg border border-border overflow-hidden">
+              <img
+                src="/images/robotics-demo-1.gif"
+                alt="Robotic arm pick and place demonstration"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-card rounded-lg border border-border overflow-hidden">
+              <img
+                src="/images/robotics-demo-2.gif"
+                alt="Robotic arm trajectory planning demonstration"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
