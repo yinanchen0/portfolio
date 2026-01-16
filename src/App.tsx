@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ProjectDPS from "./pages/ProjectDPS";
 import ProjectRobotics from "./pages/ProjectRobotics";
+import ProjectVirtualKeyboard from "./pages/ProjectVirtualKeyboard";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/projects/dps" element={<ProjectDPS />} />
           <Route path="/projects/robotics" element={<ProjectRobotics />} />
+          <Route path="/projects/virtual-keyboard" element={<ProjectVirtualKeyboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

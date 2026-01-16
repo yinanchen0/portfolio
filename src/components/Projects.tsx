@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import dpsPcbImage from "@/assets/projects/dps-pcb.jpg";
 import roboticsArmImage from "@/assets/projects/robotics-arm.jpg";
+import virtualKeyboardImage from "@/assets/projects/virtual-keyboard-device.jpg";
 
 interface Project {
   category: string;
@@ -12,9 +13,11 @@ interface Project {
 
 const projects: Project[] = [
   {
-    category: "Web Development",
-    title: "E-Commerce Platform",
-    description: "A full-stack online shopping experience with modern UI and seamless checkout flow.",
+    category: "Human-Machine Interface",
+    title: "Virtual Keyboard with Optical Sensors",
+    description: "Wearable IR sensors capture finger micro-movements for virtual keyboards, achieving 92% accuracy with machine learning classification.",
+    image: virtualKeyboardImage,
+    link: "/projects/virtual-keyboard",
   },
   {
     category: "Electronics",
