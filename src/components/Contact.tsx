@@ -6,7 +6,7 @@ const Contact = () => {
           Get In Touch
         </p>
         <h2 className="font-display text-4xl md:text-5xl font-normal text-foreground mb-6">
-          Let's Work Together
+          If you're looking for more coding projects, you can visit my GitHub.
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-12">
           I'm currently open to new opportunities and collaborations. Whether you have a project in mind or just want to say hello, I'd love to hear from you.
