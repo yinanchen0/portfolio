@@ -50,8 +50,8 @@ const ProjectAllscoo = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-normal text-foreground mb-8">Design</h2>
           <img 
-            src="/images/allscoo-renders.jpg" 
-            alt="ALLSCOO Design Renders" 
+            src="/images/allscoo-sketches.jpg" 
+            alt="ALLSCOO Design Sketches" 
             className="w-full rounded-lg shadow-md"
           />
         </div>
