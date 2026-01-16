@@ -84,6 +84,34 @@ const ProjectAllscoo = () => {
               </p>
             </div>
           </div>
+          
+          {/* Folding Mechanism Development */}
+          <div className="mb-12">
+            <h3 className="font-display text-2xl text-foreground mb-6">Folding Mechanism Development</h3>
+            <div className="space-y-8">
+              <div>
+                <img 
+                  src="/images/allscoo-folding-1.png" 
+                  alt="Folding mechanism design iterations - First and second trials" 
+                  className="w-full rounded-lg shadow-md"
+                />
+                <p className="text-muted-foreground text-sm mt-3 text-center">
+                  Initial mechanism based on varying-radius components, with iterative improvements through multiple trials.
+                </p>
+              </div>
+              <div>
+                <img 
+                  src="/images/allscoo-folding-2.png" 
+                  alt="Final folding mechanism with spring system" 
+                  className="w-full rounded-lg shadow-md"
+                />
+                <p className="text-muted-foreground text-sm mt-3 text-center">
+                  Final mechanism featuring automatic spring return, enclosed design for environmental protection, and locked/unlocked states.
+                </p>
+              </div>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-8">
             <img 
               src="/images/allscoo-foldable.jpg" 
