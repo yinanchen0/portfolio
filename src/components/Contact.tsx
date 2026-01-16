@@ -1,8 +1,6 @@
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
-
+import { Mail, Linkedin, Github } from "lucide-react";
 const Contact = () => {
-  return (
-    <section id="contact" className="py-32 px-6">
+  return <section id="contact" className="py-32 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
           Get In Touch
@@ -14,46 +12,21 @@ const Contact = () => {
           I'm currently open to new opportunities and collaborations. Whether you have a project in mind or just want to say hello, I'd love to hear from you.
         </p>
         
-        <a
-          href="mailto:your.email@example.com"
-          className="font-display text-2xl md:text-3xl text-foreground hover:text-primary transition-colors"
-        >
-          your.email@example.com
-        </a>
+        <a href="mailto:your.email@example.com" className="font-display text-2xl md:text-3xl text-foreground hover:text-primary transition-colors">yinchen2063@gmail.com</a>
         
         <div className="flex justify-center gap-6 mt-12">
-          <a
-            href="mailto:your.email@example.com"
-            className="p-3 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Email"
-          >
+          <a href="mailto:your.email@example.com" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
             <Mail size={22} strokeWidth={1.5} />
           </a>
-          <a
-            href="#"
-            className="p-3 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="LinkedIn"
-          >
+          <a href="#" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
             <Linkedin size={22} strokeWidth={1.5} />
           </a>
-          <a
-            href="#"
-            className="p-3 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="GitHub"
-          >
+          <a href="#" className="p-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
             <Github size={22} strokeWidth={1.5} />
           </a>
-          <a
-            href="#"
-            className="p-3 text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Twitter"
-          >
-            <Twitter size={22} strokeWidth={1.5} />
-          </a>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
