@@ -19,11 +19,11 @@ const thesisItems: ThesisItem[] = [
     pdfUrl: "/final-report.pdf",
   },
   {
-    title: "Your Second Thesis Title",
-    degree: "Your Degree",
-    year: "Year",
-    abstract: "An in-depth study on [topic]. This research presents novel approaches to [problem] and demonstrates practical applications in [field].",
-    keywords: ["Engineering", "Development", "Systems", "Analysis"],
+    title: "Industrial Vapor Recovery",
+    degree: "MEng Design Engineering, Imperial College London",
+    year: "2025",
+    abstract: "Industrial drying wastes billions of litres of water and ~80% of heat through exhaust vapor. This project explored membrane condensers as a solution—passing humid air across hydrophobic PTFE membranes with cold water on the other side to recover water and energy. Prototypes were built and tested, and Life Cycle Assessment showed potential to cut water use by 22-25% and energy by 15-20%. Industry validation confirmed this as an overlooked but valuable opportunity.",
+    keywords: ["Membrane Condensers", "Vapor Recovery", "Industrial Sustainability", "Water Conservation", "Energy Efficiency"],
     pdfUrl: "/thesis-2.pdf",
   },
 ];
