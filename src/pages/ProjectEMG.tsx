@@ -31,13 +31,16 @@ const ProjectEMG = () => {
         </div>
       </section>
 
-      {/* Main Image */}
+      {/* Demo Video */}
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto">
           <div className="aspect-video bg-card rounded-lg border border-border overflow-hidden">
-            <img
-              src={emgCircuitImage}
-              alt="EMG Signal Processing Circuit with Arduino"
+            <video
+              src="/videos/emg-demo.mov"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
           </div>
