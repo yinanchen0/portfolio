@@ -10,6 +10,7 @@ import ProjectRobotics from "./pages/ProjectRobotics";
 import ProjectVirtualKeyboard from "./pages/ProjectVirtualKeyboard";
 import ProjectEMG from "./pages/ProjectEMG";
 import ProjectAllscoo from "./pages/ProjectAllscoo";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects/dps" element={<ProjectDPS />} />
