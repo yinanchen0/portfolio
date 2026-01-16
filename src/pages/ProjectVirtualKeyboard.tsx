@@ -65,13 +65,13 @@ const ProjectVirtualKeyboard = () => {
         </div>
       </section>
 
-      {/* Technical Diagrams */}
+      {/* Working Principle */}
       <section className="px-6 pb-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display text-2xl font-normal text-foreground mb-8">
-            Sensing Principle
+            Working Principle
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 items-start">
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
                 src="/images/vk-sensing-principle.jpg"
@@ -88,7 +88,7 @@ const ProjectVirtualKeyboard = () => {
               <img
                 src="/images/vk-system-flow.jpg"
                 alt="System architecture showing ESP32 and sensor communication"
-                className="w-full h-auto bg-white"
+                className="w-full h-auto bg-white object-contain max-h-64"
               />
               <div className="p-4">
                 <p className="text-sm text-muted-foreground">
@@ -127,14 +127,14 @@ const ProjectVirtualKeyboard = () => {
           <h2 className="font-display text-2xl font-normal text-foreground mb-8">
             PCB Development Journey
           </h2>
-          <div className="bg-card rounded-lg border border-border overflow-hidden">
+          <div className="bg-card rounded-lg border border-border overflow-hidden max-w-2xl mx-auto">
             <img
               src="/images/vk-pcb-evolution.png"
               alt="PCB layout evolution from solid to flexible PCB across 15+ versions"
-              className="w-full h-auto bg-white p-4"
+              className="w-full h-auto bg-white p-3"
             />
           </div>
-          <p className="text-muted-foreground mt-4 leading-relaxed">
+          <p className="text-muted-foreground mt-4 leading-relaxed text-center max-w-2xl mx-auto">
             Over 15 PCB iterations were developed throughout the project, evolving from traditional rigid 
             boards to flexible PCB designs. The progression shows optimization for wearability, from early 
             ring-mounted prototypes to the final palm-worn flexible sensor arrays.
@@ -276,6 +276,23 @@ const ProjectVirtualKeyboard = () => {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Personal Reflection */}
+      <section className="px-6 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-display text-2xl font-normal text-foreground mb-8">
+            Personal Reflection
+          </h2>
+          <div className="bg-card/50 rounded-lg border border-border p-6">
+            <p className="text-muted-foreground leading-relaxed">
+              This has been the proudest personal project I've ever developed. It was a year-long journey 
+              of continuous refinement—from optimizing physical sensor placement and experimenting with 
+              component selection, to developing robust software pipelines. Every iteration taught me 
+              something new about the intersection of hardware and software engineering.
+            </p>
           </div>
         </div>
       </section>
