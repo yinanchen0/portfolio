@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import heroImage from "@/assets/projects/allscoo-hero.jpg";
 import allscooSketches from "@/assets/projects/allscoo-sketches.jpg";
@@ -7,18 +7,31 @@ import allscooFolding2 from "@/assets/projects/allscoo-folding-2.png";
 import allscooMotor from "@/assets/projects/allscoo-motor.jpg";
 
 const ProjectAllscoo = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate("/");
+    setTimeout(() => {
+      const element = document.getElementById("projects");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4">
-          <Link 
-            to="/#projects" 
+          <button
+            onClick={handleBackClick}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Projects
-          </Link>
+          </button>
         </div>
       </nav>
 
