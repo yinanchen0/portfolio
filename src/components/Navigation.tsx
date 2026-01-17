@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#projects" },
-  { label: "Thesis", href: "#thesis" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "about" },
+  { label: "Work", href: "projects" },
+  { label: "Thesis", href: "thesis" },
+  { label: "Contact", href: "contact" },
 ];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +23,32 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    // If we're on the home page, just scroll to the section
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on another page, navigate home with hash
+      navigate(`/#${sectionId}`);
+    }
+    
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -27,7 +56,11 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="#" className="font-display text-xl font-normal text-foreground">
+        <a 
+          href="#" 
+          onClick={handleLogoClick}
+          className="font-display text-xl font-normal text-foreground"
+        >
           Portfolio
         </a>
         
@@ -36,7 +69,8 @@ const Navigation = () => {
           {navLinks.map((link) => (
             <a
               key={link.label}
-              href={link.href}
+              href={`#${link.href}`}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-muted-foreground hover:text-foreground transition-colors text-sm tracking-wide"
             >
               {link.label}
@@ -61,8 +95,8 @@ const Navigation = () => {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                href={`#${link.href}`}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-muted-foreground hover:text-foreground transition-colors py-2"
               >
                 {link.label}
