@@ -1,7 +1,11 @@
 import { FileText, ExternalLink, Download } from "lucide-react";
 
-// Base URL for GitHub Pages deployment - remove trailing slash to prevent double slashes
-const BASE_URL = (import.meta.env.BASE_URL || "").replace(/\/$/, "");
+// Helper function to get correct PDF path
+const getPdfUrl = (filename: string) => {
+  const base = import.meta.env.BASE_URL || "/";
+  // Ensure no double slashes
+  return `${base.endsWith("/") ? base.slice(0, -1) : base}/${filename}`;
+};
 
 interface ThesisItem {
   title: string;
@@ -9,22 +13,23 @@ interface ThesisItem {
   year: string;
   abstract: string;
   keywords: string[];
-  pdfUrl: string;
+  pdfFilename: string;
 }
+
 const thesisItems: ThesisItem[] = [{
   title: "Investigate the Feasibility of Capturing Micromovements on Fingers for Sensor Fusion in Virtual Keyboard",
   degree: "BEng Electronic & Electrical Engineering, UCL",
   year: "2024",
   abstract: "This study explores the potential of optical sensors in capturing finger micro movements for virtual keyboard applications. Two wearable devices equipped with infrared reflection sensors were developed and tested. The keyboard design achieved 80% accuracy with the ring device and 92% accuracy with the palm-worn device. Results revealed the device's ability to recognize high-frequency trembling up to 25Hz.",
   keywords: ["Optical Sensors", "Virtual Keyboard", "Machine Learning", "Sensor Fusion", "Wearable Devices"],
-  pdfUrl: `${BASE_URL}/final-report.pdf`
+  pdfFilename: "final-report.pdf"
 }, {
   title: "Industrial Vapor Recovery",
   degree: "MSc Cleantech Innovation, Imperial College London",
   year: "2025",
   abstract: "Industrial drying wastes billions of litres of water and ~80% of heat through exhaust vapor. This project explored membrane condensers as a solution—passing humid air across hydrophobic PTFE membranes with cold water on the other side to recover water and energy. Prototypes were built and tested, and Life Cycle Assessment showed potential to cut water use by 22-25% and energy by 15-20%. Industry validation confirmed this as an overlooked but valuable opportunity. (Note: Some content has been removed from the PDF due to file size constraints.)",
   keywords: ["Membrane Condensers", "Vapor Recovery", "Industrial Sustainability", "Water Conservation", "Energy Efficiency"],
-  pdfUrl: `${BASE_URL}/thesis-2.pdf`
+  pdfFilename: "thesis-2.pdf"
 }];
 const Thesis = () => {
   return <section id="thesis" className="py-32 px-6">
@@ -59,11 +64,11 @@ const Thesis = () => {
                   
                   {/* Buttons */}
                   <div className="flex flex-wrap gap-3 mb-6">
-                    <a href={thesis.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-md font-medium text-sm hover:opacity-90 transition-opacity">
+                    <a href={getPdfUrl(thesis.pdfFilename)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-md font-medium text-sm hover:opacity-90 transition-opacity">
                       <ExternalLink size={16} />
                       View Full Report
                     </a>
-                    <a href={thesis.pdfUrl} download className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-md font-medium text-sm hover:bg-secondary transition-colors">
+                    <a href={getPdfUrl(thesis.pdfFilename)} download className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-md font-medium text-sm hover:bg-secondary transition-colors">
                       <Download size={16} />
                       Download PDF
                     </a>
