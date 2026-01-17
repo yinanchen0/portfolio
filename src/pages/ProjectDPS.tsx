@@ -1,5 +1,5 @@
 import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import dpsPcbImage from "@/assets/projects/dps-pcb.jpg";
 import dpsSchematic from "@/assets/projects/dps-schematic.png";
 import dpsEfficiency from "@/assets/projects/dps-efficiency.png";
@@ -7,17 +7,30 @@ import dpsVoltageCurrent from "@/assets/projects/dps-voltage-current.png";
 import dpsInputOutput from "@/assets/projects/dps-input-output.png";
 
 const ProjectDPS = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate("/");
+    setTimeout(() => {
+      const element = document.getElementById("projects");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Back Navigation */}
       <div className="fixed top-6 left-6 z-50">
-        <Link
-          to="/#projects"
+        <button
+          onClick={handleBackClick}
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span className="text-sm">Back to Projects</span>
-        </Link>
+        </button>
       </div>
 
       {/* Hero Section */}
