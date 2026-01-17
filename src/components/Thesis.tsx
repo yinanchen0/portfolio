@@ -1,5 +1,6 @@
 import { FileText, ExternalLink, Download } from "lucide-react";
 
+// Base URL for production deployment
 const BASE_URL = import.meta.env.MODE === "production" ? "/portfolio" : "";
 
 interface ThesisItem {
