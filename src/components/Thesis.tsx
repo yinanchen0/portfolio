@@ -1,4 +1,7 @@
 import { FileText, ExternalLink, Download } from "lucide-react";
+
+const BASE_URL = import.meta.env.MODE === "production" ? "/portfolio" : "";
+
 interface ThesisItem {
   title: string;
   degree: string;
@@ -13,14 +16,14 @@ const thesisItems: ThesisItem[] = [{
   year: "2024",
   abstract: "This study explores the potential of optical sensors in capturing finger micro movements for virtual keyboard applications. Two wearable devices equipped with infrared reflection sensors were developed and tested. The keyboard design achieved 80% accuracy with the ring device and 92% accuracy with the palm-worn device. Results revealed the device's ability to recognize high-frequency trembling up to 25Hz.",
   keywords: ["Optical Sensors", "Virtual Keyboard", "Machine Learning", "Sensor Fusion", "Wearable Devices"],
-  pdfUrl: "/final-report.pdf"
+  pdfUrl: `${BASE_URL}/final-report.pdf`
 }, {
   title: "Industrial Vapor Recovery",
   degree: "MSc Cleantech Innovation, Imperial College London",
   year: "2025",
   abstract: "Industrial drying wastes billions of litres of water and ~80% of heat through exhaust vapor. This project explored membrane condensers as a solution—passing humid air across hydrophobic PTFE membranes with cold water on the other side to recover water and energy. Prototypes were built and tested, and Life Cycle Assessment showed potential to cut water use by 22-25% and energy by 15-20%. Industry validation confirmed this as an overlooked but valuable opportunity. (Note: Some content has been removed from the PDF due to file size constraints.)",
   keywords: ["Membrane Condensers", "Vapor Recovery", "Industrial Sustainability", "Water Conservation", "Energy Efficiency"],
-  pdfUrl: "/thesis-2.pdf"
+  pdfUrl: `${BASE_URL}/thesis-2.pdf`
 }];
 const Thesis = () => {
   return <section id="thesis" className="py-32 px-6">
