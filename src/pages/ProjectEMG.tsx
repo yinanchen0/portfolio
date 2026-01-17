@@ -17,13 +17,15 @@ const ProjectEMG = () => {
 
   const handleBackClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigate("/");
-    setTimeout(() => {
-      const element = document.getElementById("projects");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+    navigate("/#projects");
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const element = document.getElementById("projects");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    });
   };
 
   return (

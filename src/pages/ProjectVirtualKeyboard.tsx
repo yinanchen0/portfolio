@@ -12,13 +12,16 @@ const ProjectVirtualKeyboard = () => {
 
   const handleBackClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigate("/");
-    setTimeout(() => {
-      const element = document.getElementById("projects");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
+    navigate("/#projects");
+    // Give time for navigation, then scroll to projects section
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const element = document.getElementById("projects");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    });
   };
 
   return (

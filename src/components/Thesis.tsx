@@ -1,7 +1,7 @@
 import { FileText, ExternalLink, Download } from "lucide-react";
 
-// Base URL for GitHub Pages deployment
-const BASE_URL = import.meta.env.BASE_URL || "";
+// Base URL for GitHub Pages deployment - remove trailing slash to prevent double slashes
+const BASE_URL = (import.meta.env.BASE_URL || "").replace(/\/$/, "");
 
 interface ThesisItem {
   title: string;

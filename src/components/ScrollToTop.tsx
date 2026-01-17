@@ -6,10 +6,11 @@ const ScrollToTop = () => {
   const prevPathRef = useRef(location.pathname);
 
   useEffect(() => {
-    // Only scroll to top when navigating TO a project page (not away from it)
     const isGoingToProject = location.pathname.startsWith("/projects/");
     const wasOnProject = prevPathRef.current.startsWith("/projects/");
     
+    // Only scroll to top when navigating TO a project page
+    // Never scroll when leaving a project page (user wants to go back to projects section)
     if (isGoingToProject && !wasOnProject) {
       window.scrollTo(0, 0);
     }
