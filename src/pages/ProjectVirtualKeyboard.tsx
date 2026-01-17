@@ -1,6 +1,11 @@
 import { ArrowLeft, Github, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import virtualKeyboardDevice from "@/assets/projects/virtual-keyboard-device.jpg";
+import vkSensingPrinciple from "@/assets/projects/vk-sensing-principle.jpg";
+import vkSystemFlow from "@/assets/projects/vk-system-flow.jpg";
+import vkMediapipe from "@/assets/projects/vk-mediapipe.jpg";
+import vkPcbEvolution from "@/assets/projects/vk-pcb-evolution.png";
+import vkPalmSensor from "@/assets/projects/vk-palm-sensor.jpg";
 
 const ProjectVirtualKeyboard = () => {
   return (
@@ -74,7 +79,7 @@ const ProjectVirtualKeyboard = () => {
           <div className="grid md:grid-cols-2 gap-6 items-start">
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/vk-sensing-principle.jpg"
+                src={vkSensingPrinciple}
                 alt="IR sensing principle for finger bending detection"
                 className="w-full h-auto bg-white"
               />
@@ -86,7 +91,7 @@ const ProjectVirtualKeyboard = () => {
             </div>
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/vk-system-flow.jpg"
+                src={vkSystemFlow}
                 alt="System architecture showing ESP32 and sensor communication"
                 className="w-full h-auto bg-white object-contain max-h-64"
               />
@@ -108,7 +113,7 @@ const ProjectVirtualKeyboard = () => {
           </h2>
           <div className="bg-card rounded-lg border border-border overflow-hidden">
             <img
-              src="/images/vk-mediapipe.jpg"
+              src={vkMediapipe}
               alt="MediaPipe hand tracking flowchart"
               className="w-full h-auto bg-white"
             />
@@ -129,7 +134,7 @@ const ProjectVirtualKeyboard = () => {
           </h2>
           <div className="bg-card rounded-lg border border-border overflow-hidden max-w-2xl mx-auto">
             <img
-              src="/images/vk-pcb-evolution.png"
+              src={vkPcbEvolution}
               alt="PCB layout evolution from solid to flexible PCB across 15+ versions"
               className="w-full h-auto bg-white p-3"
             />
@@ -150,7 +155,7 @@ const ProjectVirtualKeyboard = () => {
           </h2>
           <div className="bg-card rounded-lg border border-border overflow-hidden">
             <img
-              src="/images/vk-palm-sensor.jpg"
+              src={vkPalmSensor}
               alt="Palm-worn flexible PCB sensor device"
               className="w-full h-auto"
             />

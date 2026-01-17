@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import heroImage from "@/assets/projects/allscoo-hero.jpg";
+import allscooSketches from "@/assets/projects/allscoo-sketches.jpg";
+import allscooFolding1 from "@/assets/projects/allscoo-folding-1.png";
+import allscooFolding2 from "@/assets/projects/allscoo-folding-2.png";
+import allscooMotor from "@/assets/projects/allscoo-motor.jpg";
 
 const ProjectAllscoo = () => {
   return (
@@ -50,7 +54,7 @@ const ProjectAllscoo = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-normal text-foreground mb-8">Design</h2>
           <img 
-            src="/images/allscoo-sketches.jpg" 
+            src={allscooSketches} 
             alt="ALLSCOO Design Sketches" 
             className="w-full rounded-lg shadow-md"
           />
@@ -91,7 +95,7 @@ const ProjectAllscoo = () => {
             <div className="space-y-8">
               <div>
                 <img 
-                  src="/images/allscoo-folding-1.png" 
+                  src={allscooFolding1} 
                   alt="Folding mechanism design iterations - First and second trials" 
                   className="w-full rounded-lg shadow-md"
                 />
@@ -101,7 +105,7 @@ const ProjectAllscoo = () => {
               </div>
               <div>
                 <img 
-                  src="/images/allscoo-folding-2.png" 
+                  src={allscooFolding2} 
                   alt="Final folding mechanism with spring system" 
                   className="w-full rounded-lg shadow-md"
                 />
@@ -115,7 +119,7 @@ const ProjectAllscoo = () => {
           <div>
             <h3 className="font-display text-2xl text-foreground mb-6">Footrest</h3>
             <img 
-              src="/images/allscoo-motor.jpg" 
+              src={allscooMotor} 
               alt="Footrest Design" 
               className="w-full rounded-lg shadow-md"
             />

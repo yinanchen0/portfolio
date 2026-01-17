@@ -1,6 +1,16 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import emgCircuitImage from "@/assets/projects/emg-circuit.jpg";
+import emgSystemOverview from "@/assets/projects/emg-system-overview.png";
+import emgPotentialDivider from "@/assets/projects/emg-potential-divider.jpg";
+import emgInstrumentationAmp from "@/assets/projects/emg-instrumentation-amp.png";
+import emgDrlCircuit from "@/assets/projects/emg-drl-circuit.jpg";
+import emgFilter from "@/assets/projects/emg-filter.jpg";
+import emgRectifier from "@/assets/projects/emg-rectifier.jpg";
+import emgRectifierSimulation from "@/assets/projects/emg-rectifier-simulation.png";
+import emgIntegrator from "@/assets/projects/emg-integrator.jpg";
+import emgFurtherAmp from "@/assets/projects/emg-further-amp.jpg";
+import emgOutput from "@/assets/projects/emg-output.jpg";
 
 const ProjectEMG = () => {
   return (
@@ -36,7 +46,7 @@ const ProjectEMG = () => {
         <div className="max-w-4xl mx-auto">
           <div className="aspect-video bg-card rounded-lg border border-border overflow-hidden">
             <video
-              src="/videos/emg-demo.mov"
+              src={`${import.meta.env.BASE_URL}videos/emg-demo.mov`}
               autoPlay
               loop
               muted
@@ -79,7 +89,7 @@ const ProjectEMG = () => {
           </h2>
           <div className="bg-card rounded-lg border border-border overflow-hidden">
             <img
-              src="/images/emg-system-overview.png"
+              src={emgSystemOverview}
               alt="EMG System Block Diagram"
               className="w-full h-auto bg-white"
             />
@@ -102,7 +112,7 @@ const ProjectEMG = () => {
           </p>
           <div className="bg-card rounded-lg border border-border overflow-hidden">
             <img
-              src="/images/emg-potential-divider.jpg"
+              src={emgPotentialDivider}
               alt="Potential Divider Circuit"
               className="w-full h-auto"
             />
@@ -129,7 +139,7 @@ const ProjectEMG = () => {
             </div>
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/emg-instrumentation-amp.png"
+                src={emgInstrumentationAmp}
                 alt="Instrumentation Amplifier Circuit"
                 className="w-full h-auto bg-white"
               />
@@ -147,7 +157,7 @@ const ProjectEMG = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/emg-drl-circuit.jpg"
+                src={emgDrlCircuit}
                 alt="DRL Circuit"
                 className="w-full h-auto"
               />
@@ -175,7 +185,7 @@ const ProjectEMG = () => {
           </p>
           <div className="bg-card rounded-lg border border-border overflow-hidden">
             <img
-              src="/images/emg-filter.jpg"
+              src={emgFilter}
               alt="Bandpass Filter Circuit"
               className="w-full h-auto"
             />
@@ -200,7 +210,7 @@ const ProjectEMG = () => {
             </div>
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/emg-rectifier.jpg"
+                src={emgRectifier}
                 alt="Precision Rectifier Circuit"
                 className="w-full h-auto"
               />
@@ -208,7 +218,7 @@ const ProjectEMG = () => {
           </div>
           <div className="mt-6 bg-card rounded-lg border border-border overflow-hidden">
             <img
-              src="/images/emg-rectifier-simulation.png"
+              src={emgRectifierSimulation}
               alt="Rectifier Simulation"
               className="w-full h-auto bg-white"
             />
@@ -230,7 +240,7 @@ const ProjectEMG = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/emg-integrator.jpg"
+                src={emgIntegrator}
                 alt="Integrator Circuit"
                 className="w-full h-auto"
               />
@@ -264,7 +274,7 @@ const ProjectEMG = () => {
             </div>
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/emg-further-amp.jpg"
+                src={emgFurtherAmp}
                 alt="Output Amplifier Circuit"
                 className="w-full h-auto"
               />
@@ -281,7 +291,7 @@ const ProjectEMG = () => {
           </h2>
           <div className="bg-card rounded-lg border border-border overflow-hidden mb-8">
             <img
-              src="/images/emg-output.jpg"
+              src={emgOutput}
               alt="Output Configuration with Arduino"
               className="w-full h-auto"
             />
@@ -406,13 +416,8 @@ const ProjectEMG = () => {
                     </tr>
                     <tr className="border-b border-border/50">
                       <td className="py-2">Diodes</td>
-                      <td className="py-2">1N4001</td>
-                      <td className="text-right py-2">2</td>
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="py-2">Breadboards</td>
-                      <td className="py-2">Big + Small</td>
-                      <td className="text-right py-2">2</td>
+                      <td className="py-2">1N4148</td>
+                      <td className="text-right py-2">4</td>
                     </tr>
                   </tbody>
                 </table>

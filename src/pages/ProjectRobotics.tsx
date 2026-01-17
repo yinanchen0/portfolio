@@ -1,6 +1,8 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import roboticsArmImage from "@/assets/projects/robotics-arm.jpg";
+import roboticsDemo1 from "@/assets/projects/robotics-demo-1.gif";
+import roboticsDemo2 from "@/assets/projects/robotics-demo-2.gif";
 
 const ProjectRobotics = () => {
   return (
@@ -56,14 +58,14 @@ const ProjectRobotics = () => {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/robotics-demo-1.gif"
+                src={roboticsDemo1}
                 alt="Robotic arm pick and place demonstration"
                 className="w-full h-auto"
               />
             </div>
             <div className="bg-card rounded-lg border border-border overflow-hidden">
               <img
-                src="/images/robotics-demo-2.gif"
+                src={roboticsDemo2}
                 alt="Robotic arm trajectory planning demonstration"
                 className="w-full h-auto"
               />
