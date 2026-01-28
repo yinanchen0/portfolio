@@ -1,9 +1,9 @@
 import { FileText, ExternalLink, Download } from "lucide-react";
+import { useState } from "react";
 
 // Helper function to get correct PDF path
 const getPdfUrl = (filename: string) => {
   const base = import.meta.env.BASE_URL || "/";
-  // Ensure no double slashes
   return `${base.endsWith("/") ? base.slice(0, -1) : base}/${filename}`;
 };
 
@@ -31,18 +31,29 @@ const thesisItems: ThesisItem[] = [{
   keywords: ["Membrane Condensers", "Vapor Recovery", "Industrial Sustainability", "Water Conservation", "Energy Efficiency"],
   pdfFilename: "thesis-2.pdf"
 }];
+
 const Thesis = () => {
-  return <section id="thesis" className="py-32 px-6">
+  const [expandedPdf, setExpandedPdf] = useState<string | null>(null);
+
+  const togglePdfPreview = (filename: string) => {
+    setExpandedPdf(expandedPdf === filename ? null : filename);
+  };
+
+  return (
+    <section id="thesis" className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-normal text-foreground mb-4">
             My Thesis
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">Explore my graduation thesis and research work.</p>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Explore my graduation thesis and research work.
+          </p>
         </div>
         
         <div className="space-y-8">
-          {thesisItems.map((thesis, index) => <div key={index} className="bg-card rounded-lg border border-border p-8">
+          {thesisItems.map((thesis, index) => (
+            <div key={index} className="bg-card rounded-lg border border-border p-8">
               <div className="flex gap-6">
                 {/* PDF Icon */}
                 <div className="hidden sm:flex w-32 h-40 bg-secondary rounded-lg items-center justify-center flex-shrink-0">
@@ -64,31 +75,56 @@ const Thesis = () => {
                   
                   {/* Buttons */}
                   <div className="flex flex-wrap gap-3 mb-6">
-                    <a href={getPdfUrl(thesis.pdfFilename)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-md font-medium text-sm hover:opacity-90 transition-opacity">
+                    <button
+                      onClick={() => togglePdfPreview(thesis.pdfFilename)}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-md font-medium text-sm hover:opacity-90 transition-opacity"
+                    >
                       <ExternalLink size={16} />
-                      View Full Report
-                    </a>
-                    <a href={getPdfUrl(thesis.pdfFilename)} download className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-md font-medium text-sm hover:bg-secondary transition-colors">
+                      {expandedPdf === thesis.pdfFilename ? "Hide Preview" : "Preview Report"}
+                    </button>
+                    <a
+                      href={getPdfUrl(thesis.pdfFilename)}
+                      download
+                      className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-md font-medium text-sm hover:bg-secondary transition-colors"
+                    >
                       <Download size={16} />
                       Download PDF
                     </a>
                   </div>
+
+                  {/* Embedded PDF Preview */}
+                  {expandedPdf === thesis.pdfFilename && (
+                    <div className="mb-6 rounded-lg overflow-hidden border border-border bg-muted">
+                      <iframe
+                        src={getPdfUrl(thesis.pdfFilename)}
+                        className="w-full h-[500px] md:h-[600px]"
+                        title={`Preview of ${thesis.title}`}
+                      />
+                    </div>
+                  )}
                   
                   {/* Keywords */}
                   <div>
                     <span className="text-muted-foreground text-sm">Keywords:</span>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      {thesis.keywords.map(keyword => <span key={keyword} className="px-3 py-1 bg-secondary text-secondary-foreground rounded-md text-xs">
+                      {thesis.keywords.map(keyword => (
+                        <span
+                          key={keyword}
+                          className="px-3 py-1 bg-secondary text-secondary-foreground rounded-md text-xs"
+                        >
                           {keyword}
-                        </span>)}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
-      
-    </section>;
+    </section>
+  );
 };
+
 export default Thesis;
